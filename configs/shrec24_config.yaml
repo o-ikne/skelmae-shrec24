@@ -1,0 +1,37 @@
+# exp config
+exp_name: 'Shrec24'
+seed: 0
+dataset: 'shrec24'
+save_folder_path: './experiments/'
+
+# data config
+data:
+ train_data_dir: './Data Split/Train-set/'
+ test_data_dir: './Data Split/Test-set/'
+ normalize: True
+
+# mae model config
+mae:
+ num_joints: 28
+ coords_dim: 3
+ encoder_embed_dim: 256
+ encoder_depth: 6
+ num_heads: 8
+ mlp_dim: 512
+ decoder_dim: 64
+ decoder_depth: 6
+ masking_strategy: 'random-hand'
+ masking_ratio: 0.7
+ num_epochs: 1
+ lr: 1e-3
+ weight_decay: 0.05
+ batch_size: 64
+
+## stgcn model configs
+stgcn:
+ sequence_length: 3000
+ num_classes: 6
+ num_epochs: 1
+ lr: 1e-3
+ weight_decay: 0.0005
+ batch_size: 2
