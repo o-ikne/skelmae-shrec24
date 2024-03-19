@@ -19,7 +19,9 @@ pip install -r requirements.txt
 ```
 
 ## Training
-Download the [**SHREC'24**](https://www.shrec.net/SHREC-2024-hand-motion/) dataset.
+Download the [**SHREC'24**](https://www.shrec.net/SHREC-2024-hand-motion/) dataset. And set the path to training and test data in the `shrec24_config.yaml` file in the `configs/` folder.
+
+
 
 ### Training
 
