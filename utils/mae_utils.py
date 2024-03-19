@@ -21,8 +21,6 @@ def train_one_epoch(epoch, num_epochs, model, dataloader, optimizer, scheduler, 
         optimizer.step()
         train_loss += loss.item()
         pbar.set_description(f'[%.3g/%.3g] train loss. %.2f' % (epoch, num_epochs, train_loss))
-
-        break
         
     if scheduler is not None:
         scheduler.step()
@@ -43,8 +41,6 @@ def valid_one_epoch(model, dataloader, device):
             
             desc = '[VALID] valid loss. %.2f' % (valid_loss)
             pbar.set_description(desc)
-
-            break
                 
     return valid_loss
 

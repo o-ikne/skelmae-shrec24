@@ -22,16 +22,16 @@ mae:
  decoder_depth: 6
  masking_strategy: 'random-hand'
  masking_ratio: 0.7
- num_epochs: 1
- lr: 1e-3
+ num_epochs: 100
+ lr: 2e-4
  weight_decay: 0.05
  batch_size: 64
 
 ## stgcn model configs
 stgcn:
  sequence_length: 3000
- num_classes: 6
- num_epochs: 1
+ num_classes: 7
+ num_epochs: 30
  lr: 1e-3
  weight_decay: 0.0005
  batch_size: 2

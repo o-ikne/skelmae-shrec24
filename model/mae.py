@@ -156,6 +156,10 @@ class MAE(nn.Module):
         recon_loss = F.mse_loss(masked_pred, masked_nodes)
 
         return decoder_tokens, masked_nodes, masked_indices, masked_pred, recon_loss
+
+    def freeze(self):
+        for p in self.parameters():
+            p.requires_grad = False
             
     def inference(self, x, a):
         device = x.device
@@ -163,7 +167,8 @@ class MAE(nn.Module):
         if len_x == 4:
             b, t, n, d = x.shape
             x = rearrange(x, 'b t n d -> (b t) n d') 
-            a = a.repeat(t, 1, 1)
+            if a is not None:
+                a = a.repeat(t, 1, 1)
 
         with torch.no_grad():
             # get patches

@@ -68,7 +68,7 @@ if __name__ == '__main__':
 								 normalize=data_args.normalize)
 
 	print('# Test: {}'.format(len(valid_set)))
-	valid_loader = DataLoader(valid_set, batch_size=stgcn_args.batch_size, shuffle=False)
+	valid_loader = DataLoader(valid_set, batch_size=1, shuffle=False)
 
 	print('\nLOADING MAE PRE-TRAINED WEIGHTS....', end='')	
 	encoder = ViT(

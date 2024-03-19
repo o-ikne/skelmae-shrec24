@@ -71,7 +71,7 @@ class PretrainingDataset(Dataset):
             self.max = max_.unsqueeze(0).float() # joints, coords
             
         data = []
-        for folder in tqdm(os.listdir(self.data_dir), desc='loading SHREC24 skeletal data....'):
+        for folder in tqdm(os.listdir(self.data_dir), desc='loading SHREC24 data[Pre-training]....'):
             folder_path = opt.join(self.data_dir, folder)
             for file in os.listdir(folder_path):
                 file_path = opt.join(folder_path, file)
@@ -134,9 +134,9 @@ class FinetuningDataset(Dataset):
             self.max = max_.unsqueeze(0).unsqueeze(0).float() # frames, coords, joints
 
         data = []
-        for folder in tqdm(os.listdir(self.data_dir), desc='loading skeletal data....'):
+        for folder in tqdm(sorted(os.listdir(self.data_dir)), desc='loading SHREC24 data [Finetuning]....'):
             folder_path = opt.join(self.data_dir, folder)
-            for file in os.listdir(folder_path):
+            for file in sorted(os.listdir(folder_path)):
                 file_path = opt.join(folder_path, file)
                 if not file_path.endswith('.txt'):
                     continue

@@ -159,10 +159,11 @@ if __name__ == '__main__':
 	print('[optimal epoch={}]'.format(mae_chkpt['epoch']))
 	mae.load_state_dict(mae_chkpt['state_dict'])
 	mae = mae.to(device)
+	mae.freeze()
 
 	print('\n Building STGCN model....')
 
-	stgcn = STGCN(channel=64,
+	stgcn = STGCN(channel=mae_args.decoder_dim,
 				  num_class=stgcn_args.num_classes,
 				  window_size=stgcn_args.sequence_length,
 				  num_point=mae_args.num_joints,
@@ -174,7 +175,7 @@ if __name__ == '__main__':
 				  use_local_bn=False,
 				  multiscale=False,
 				  temporal_kernel_size=11,
-				  dropout=0.5)
+				  dropout=0.5).to(device)
 
 
 	optimizer = optim.AdamW(stgcn.parameters(), lr=stgcn_args.lr, weight_decay=stgcn_args.weight_decay)
