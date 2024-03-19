@@ -4,7 +4,7 @@
 ![hippo](images/mae_approach.jpg)
 
 ## **Updates**
-- code will be available soon
+- ...
 
 ## **Installation**
 Create and activate conda environment:
@@ -18,10 +18,13 @@ Install all dependencies:
 pip install -r requirements.txt
 ```
 
-## Training
+## Dataset
 Download the [**SHREC'24**](https://www.shrec.net/SHREC-2024-hand-motion/) dataset. And set the path to training and test data in the `shrec24_config.yaml` file in the `configs/` folder.
 
-
+```
+ train_data_dir: './path/to/Train-set/'
+ test_data_dir: './path/to/Test-set/'
+```
 
 ### Training
 
