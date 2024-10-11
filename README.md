@@ -1,6 +1,8 @@
 # **Shrec24**
 [[SHREC24]](https://www.shrec.net/SHREC-2024-hand-motion/) Skeleton-based Self-Supervised Learning For Dynamic Hand Gesture Recognition
 
+Check out the SHREC24 paper [here](https://www.sciencedirect.com/science/article/pii/S009784932400147X).
+
 ![hippo](images/mae_approach.jpg)
 
 ## **Updates**
